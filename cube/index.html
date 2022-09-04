@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        perspective: 800px;
+      }
+
+      .cube {
+        width: 200px;
+        height: 200px;
+        margin: 100px auto;
+        /* 设置3d变形效果 */
+        transform-style: preserve-3d;
+        animation: rotate 16s infinite linear;
+      }
+      .cube > div {
+        width: 200px;
+        height: 200px;
+        /* 为元素设置透明效果 */
+        opacity: 0.6;
+        position: absolute;
+      }
+      p {
+        font-size: 8em;
+        font-weight: bold;
+      }
+      .box {
+        display: flex;
+        background-color: cornsilk;
+        justify-content: center;
+        align-items: center;
+      }
+      #box1 {
+        transform: rotateY(0deg) translateZ(100px);
+      }
+      #box2 {
+        transform: rotateY(90deg) translateZ(100px);
+      }
+      #box3 {
+        transform: rotateX(90deg) translateZ(100px);
+      }
+      #box4 {
+        transform: rotateX(-90deg) translateZ(100px);
+      }
+      #box5 {
+        transform: rotateY(-90deg) translateZ(100px);
+      }
+      #box6 {
+        transform: rotateY(180deg) translateZ(100px);
+      }
+      @keyframes rotate {
+        form {
+          transform: rotateX(0) rotateZ(0);
+        }
+        to {
+          transform: rotateX(1turn) rotateZ(1turn);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cube">
+      <div class="box" id="box1"><p>1</p></div>
+      <div class="box" id="box2"><p>2</p></div>
+      <div class="box" id="box3"><p>3</p></div>
+      <div class="box" id="box4"><p>4</p></div>
+      <div class="box" id="box5"><p>5</p></div>
+      <div class="box" id="box6"><p>6</p></div>
+    </div>
+  </body>
+</html>
