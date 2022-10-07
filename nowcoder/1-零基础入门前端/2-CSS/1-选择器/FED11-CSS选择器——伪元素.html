@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+请给html模块的div元素加一个后伪元素，且后伪元素的宽度和高度都是20px，背景颜色为"rgb(255, 0, 0)"。
+    </pre>
+    <div></div>
+    <style type="text/css">
+      div::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: rgb(255, 0, 0);
+        display: block;
+      }
+    </style>
+  </body>
+</html>
