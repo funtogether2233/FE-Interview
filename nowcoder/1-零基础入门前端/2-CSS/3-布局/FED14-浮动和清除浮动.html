@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+请将类为"left"的div元素和类为"right"的div元素在同一行上向左浮动，且清除类为"wrap"的父级div元素内部的浮动。
+    </pre>
+    <div class="wrap">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+    <style type="text/css">
+      .wrap {
+        overflow: hidden;
+      }
+      .left {
+        width: 100px;
+        height: 100px;
+        float: left;
+      }
+      .right {
+        width: 100px;
+        height: 100px;
+        float: left;
+      }
+    </style>
+  </body>
+</html>
