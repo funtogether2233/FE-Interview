@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+请补全JavaScript代码，实现一个盒子的关闭按钮功能。
+要求：
+1. 使类为"btn"的div元素中心点定位在类为"box"的div元素右上顶点
+2. 使类为"btn"的div元素中内容"X"垂直水平居中
+3. 点击"X"按钮可以使类为"box"的div元素隐藏
+    </pre>
+    <div class="box">
+      <div class="btn">X</div>
+    </div>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        border: solid 1px black;
+        position: relative;
+      }
+      .btn {
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        text-align: center;
+      }
+    </style>
+    <script>
+      var btn = document.querySelector(".btn");
+      var box = document.querySelector(".box");
+      btn.onclick = function () {
+        box.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
