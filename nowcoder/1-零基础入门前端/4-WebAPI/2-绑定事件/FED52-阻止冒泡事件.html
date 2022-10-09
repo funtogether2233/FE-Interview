@@ -9,13 +9,16 @@
   <body>
     <pre>
 描述
-请补全JavaScript函数，将类为"box"的div元素内容修改为"欢迎来到牛客网"。
+请补全JavaScript函数，要求在点击li元素的时候不触发ul的事件。
+注意：需要自行获取li元素。
     </pre>
-    <div class="box"></div>
+    <ul>
+      <li>nowcoder</li>
+    </ul>
     <script type="text/javascript">
-      function modifyText() {
-        document.querySelector(".box").innerHTML = "欢迎来到牛客网";
-      }
+      document.querySelector("li").addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
     </script>
   </body>
 </html>
