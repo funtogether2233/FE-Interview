@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+请补全JavaScript函数，要求在点击id为"checkbox"的复选框时不会取消勾选状态。
+注意：需要自行获取input元素。
+    </pre>
+    <form>
+      <label>牛客会陪伴大家</label>
+      <input id="checkbox" type="checkbox" checked />
+    </form>
+    <script type="text/javascript">
+      document.getElementById("checkbox").addEventListener("click", (e) => {
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>
