@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+请补全JavaScript函数，根据参数数组创建li元素。
+要求：
+1. li元素的个数和数组的长度一样
+2. li元素的内容是数组中的每个元素
+3. 将创建的所有li元素插入到ul中
+    </pre>
+    <ul></ul>
+    <script type="text/javascript">
+      function createLi(array) {
+        const ul = document.querySelector("ul");
+        for (let i = 0; i < array.length; i++) {
+          const li = document.createElement("li");
+          li.innerHTML = array[i];
+          ul.appendChild(li);
+        }
+      }
+    </script>
+  </body>
+</html>
