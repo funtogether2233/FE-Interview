@@ -3,5 +3,5 @@
 // 示例：
 // 1. typeof number === 'number' -> typeof _numbertoobject(number) === 'object'
 function _numbertoobject(number) {
-  return Object(number);
+  return new Number(number);
 }
