@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+使用Grid网格布局实现双列布局的要点在于列数为2，且首列的宽度根据需要自行设置，第二列使用片段"fr"属性进行自适应即可。行数不需要指定，每行会根据内容高度进行自适应缩放。
+现在给类名为"container"的盒子添加"display: grid"属性，使该盒子成为容器。再给该容器添加"grid-template-columns: 100px 1fr"属性，表示第一列宽度始终为100px，第二列的宽度为剩余的所有空间。此时可以看到整个容器的高度因为首列的内容被撑开了，并且右边内容区实现了自适应。
+进入下一节的学习吧。
+    </pre>
+    <section class="container">
+      <article class="left">
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </article>
+      <article class="right"></article>
+    </section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        border: 1px solid black;
+      }
+      .left {
+        border: 1px solid black;
+      }
+    </style>
+  </body>
+</html>
