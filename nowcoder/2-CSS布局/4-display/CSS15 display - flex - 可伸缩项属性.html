@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+Flexbox支持对弹性项的灵活控制。Flex的意思为可伸缩，这体现在以下三个属性中：
+1. flex-basis：基础值
+2. flex-grow：拉伸弹性系数，如果容器宽度减去弹性项的基础值之和之后还有剩余空间，那么就按照弹性系数比例去分配剩余空间
+3. flex-shrink：缩减弹性系数，和拉伸弹性系数逻辑相反
+这三个属性应用给弹性项，而不是容器。
+现在首先给所有的"li"添加"flex: 1 0 0%"属性，该属性的三个值分别为flex-grow、flex-shrink和flex-basis，表示：当有剩余空间时均匀分配剩余空间、当超出容器宽度时不进行缩放、弹性项的基础值都为容器的0%。此时可以看到四个每个"li"标签的宽度都为125px，分别占据了容器的1/4。现在再单独给第一个"li"标签设置"flex-grow: 2"属性，此时又会发现所有"li"标签的宽度比值为2:1:1:1。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <nav>
+      <ul>
+        <li>home</li>
+        <li>spaceships</li>
+        <li>planets</li>
+        <li>stars</li>
+      </ul>
+    </nav>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      nav {
+        width: 500px;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+      li {
+        flex: 1 0 0%;
+      }
+      li:nth-child(1) {
+        flex-grow: 2;
+      }
+    </style>
+  </body>
+</html>
