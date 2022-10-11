@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+浮动盒子可以向左、右移动，直到它的外边沿接触父级的外边沿或另一个浮动盒子的外边沿。浮动盒子会脱离常规文档流，所以文档流中的元素几乎认为浮动盒子不存在。
+现在给"body"标签设置宽度为300px，再给类名为"left"、"center"、"right"的盒子（左、中、右盒子）皆设置宽度、高度且都为100px，三个盒子的颜色可以自定义以便于观测。继续给中间盒子设置"float: left"属性，此时中间盒子已经是一个浮动盒子，不再占据流中的位置空间，右盒子上升到了浮动盒子的区域并且被浮动盒子覆盖住了。现在再给左、右盒子皆设置"float: left"属性，此时三个盒子水平排列在一行上。重设左盒子的宽度、高度皆为120px，可以观察到因为"body"盒子较窄，所以右盒子被迫换行并且因为左盒子的高度超过了中间盒子，右盒子被卡在了中间盒子下方。
+以上为浮动盒子的特性。完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <div class="left"></div>
+    <div class="center"></div>
+    <div class="right"></div>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 300px;
+      }
+      .left,
+      .center,
+      .right {
+        height: 100px;
+        width: 100px;
+      }
+      .left {
+        float: left;
+        width: 120px;
+        height: 120px;
+        background-color: red;
+      }
+      .center {
+        float: left;
+        background-color: green;
+      }
+      .right {
+        float: left;
+        background-color: blue;
+      }
+    </style>
+  </body>
+</html>
