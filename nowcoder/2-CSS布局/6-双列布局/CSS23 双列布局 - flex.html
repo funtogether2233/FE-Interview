@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+通过Flexbox可以快速实现双列布局，主要通过"flex: 1"这条弹性项属性给内容区申请到父盒子的所有剩余空间，并且可以给弹性项设置"position"属性调整弹性项内部的子盒子细节。
+现在给类名为"container"的父盒子添加"display: flex"属性，使该盒子成为弹性盒容器。继续给类名为"left"的弹性项盒子添加"width: 100px"属性。最后给类名为"right"的弹性项盒子添加"flex: 1"属性。由于弹性项盒子默认占满弹性容器盒子的所有高度，所以两个弹性项盒子的高度也是自适应。右边的内容区宽度会占满弹性容器盒子的剩余空间，所以宽度也是自适应的。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <section class="container">
+      <article class="left">
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </article>
+      <article class="right"></article>
+    </section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        border: 1px solid black;
+      }
+      .left {
+        border: 1px solid black;
+        width: 100px;
+      }
+      .right {
+        flex: 1;
+        border: 1px solid greenyellow;
+      }
+    </style>
+  </body>
+</html>
