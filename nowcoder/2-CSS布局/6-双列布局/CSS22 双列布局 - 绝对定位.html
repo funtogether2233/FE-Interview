@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+通过绝对定位实现的双列布局看起来会比较僵硬，因为父盒子首先需要设置定位属性并且父盒子的高度无法被子盒子撑开，如果子盒子的高度是自适应的，那么父盒子的高度也就无法确定从而设置了，但优点是设置属性比浮动来得更直观。
+现在给类名为"container"的父盒子添加"position: relative"属性，为了保证子盒子绝对定位时不会根据html元素定位。继续给类名为"left"的盒子添加"position: absolute"、"left: 0"和"width: 100px"三条属性，使该盒子定位到父盒子的最左边并且赋予宽度，但高度是根据内容自适应的。最后给类名为"right"的盒子添加"position: absolute"、"left: 100px"和"right: 0px"，因为该盒子没有给定宽度，设置"left"和"right"定位属性会使内容区保留在这个范围内，同样实现了自适应。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <section class="container">
+      <article class="left"><br /><br /><br /><br /></article>
+      <article class="right"><br /><br /><br /></article>
+    </section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        position: relative;
+      }
+      .left {
+        position: absolute;
+        left: 0;
+        border: 1px solid black;
+        width: 100px;
+      }
+      .right {
+        position: absolute;
+        left: 100px;
+        right: 0px;
+        border: 1px solid black;
+      }
+    </style>
+  </body>
+</html>
