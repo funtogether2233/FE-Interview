@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+绝对定位会把元素拿出文档流，不会再占据原来的空间。绝对定位元素的父级是距离该元素最近的定位祖先，也就是"position"属性不为"static"的最近任意祖先。如果没有这个定位祖先，那么绝对定位元素就相对于文档的根元素"html"进行定位。
+当前类名为"outer"、"middle"、"inner"的盒子（外、中、里盒子）嵌套在一起，现在给三个盒子均设置左内边距10px，再自定义盒子背景颜色以便于观察。再给里盒子设置绝对定位属性"position: absolute"，会发现里盒子的位置并没有发生改变，因为绝对定位的默认位置是当前绝对定位盒子在流中的位置。继续给里盒子设置"left: 0px"属性，观察到里盒子是根据最外层盒子定位的，直接绕过了中间盒子，这是由于中间盒子的定位属性为默认的"static"，此时再给中间盒子设置定位属性"position: absolute"，会发现里盒子现在是根据中间盒子重新定位的。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <div class="outer">
+      <div class="middle">
+        <div class="inner"></div>
+      </div>
+    </div>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .outer,
+      .middle,
+      .inner {
+        padding-left: 10px;
+      }
+      .outer {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .middle {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: green;
+      }
+      .inner {
+        position: absolute;
+        left: 0px;
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+    </style>
+  </body>
+</html>
