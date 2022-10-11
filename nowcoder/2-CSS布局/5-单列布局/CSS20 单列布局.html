@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+单列布局是将头部、内容区、底部在页面上垂直排列，是非常实用的一种布局方式。主要对三个区域的宽度进行统一，然后通过设置自动外边距进行居中。
+现在给"header"、"section"、"footer"三个盒子统一设置"margin: 10px auto"、"width: 360px"、"border: 1px solid black"属性。此时因为内容区有内容而头部和底部没有内容所以只有内容区的高度被撑开，一般头部和底部的内容是根据自己的需求固定大小的，所以现在再给头部和底部统一设置高度，即"height: 32px"。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <header></header>
+    <section>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </section>
+    <footer></footer>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 500px;
+      }
+      header,
+      section,
+      footer {
+        margin: 10px auto;
+        width: 360px;
+        border: 1px solid black;
+      }
+      header,
+      footer {
+        height: 32px;
+      }
+    </style>
+  </body>
+</html>
