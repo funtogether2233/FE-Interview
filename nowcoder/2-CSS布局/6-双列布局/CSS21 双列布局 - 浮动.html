@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+自适应的双列布局利用浮动、外边和触发父级BFC即可实现，这种方法主要是因为BFC的高度计算会包含其内的浮动元素的高度，父盒子会被撑开。
+现在给类名为"container"的父盒子添加"overflow: hidden"属性，使该父盒子成为BFC。继续给类名为"left"的盒子设置"float: left"和"width: 100px"属性，使该盒子成为浮动元素并且需要一个固定的宽度。最后再给类名为"right"的盒子设置左外边距"margin-left: 100px"属性，该属性值需要和左浮动的盒子宽度一致。此时父盒子的高度会根据左边浮动元素、右边内容区中高度较高的一方进行计算，并且右边内容区的宽度自适应，最好是根据需要，配合最大或最小宽度进行设置。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <section class="container">
+      <article class="left">
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </article>
+      <article class="right"></article>
+    </section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        border: 1px solid black;
+        overflow: hidden;
+      }
+      .left {
+        float: left;
+        border: 1px solid black;
+        width: 100px;
+      }
+      .right {
+        margin-left: 100px;
+      }
+    </style>
+  </body>
+</html>
