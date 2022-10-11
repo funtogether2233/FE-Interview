@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+z-index属性设置元素的堆叠顺序，拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的上面。z-index可以设置为负数，且该属性只能作用于定位元素。
+现在给"img"图片标签添加"position: absolute"、"left: 0px"和"top: 0px"属性，此时会发现图片被定绝对定位在了页面的左上角，并且遮挡住了下方的内容。现在继续给图片标签添加"z-index: -1"属性，现在图片堆叠在了字体内容的下方。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <h1>The countdown to Christmas starts here.</h1>
+    <img
+      src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1912%2F1135-191202143454.jpg&refer=http%3A%2F%2Fuploads.xuexila.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639984107&t=eca951193e736a17eb96278117bcfb1f"
+      width="100"
+    />
+    <p>由于图像的 z-index 是 -1，因此它在文本的后面出现。</p>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+      }
+    </style>
+  </body>
+</html>
