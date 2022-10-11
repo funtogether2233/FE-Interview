@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+不像Flexbox或Grid布局可以控制元素显示的次序，圣杯布局是通过浮动元素和外边距属性实现三列布局，但最重要的一点是，在文档中需要将优先渲染的内容写在最前方，但显示时看起来却好像是按照显示次序书写的一样。
+首先给类名为"container"的盒子添加"overflow: hidden"和"padding: 0px 100px"属性，以为了防止容器盒子高度塌陷和给之后的左、右浮动元素预留位置。现在继续给类名为"left"的盒子添加以下属性：
+1. "float: left"，浮动，保证之后的"margin-left"属性可以将自身拉到上一行
+2. "width: 100px"，固定宽度
+3. "margin-left: -100%"，该属性可以将元素向左移动属性值的单位，100%相对于父容器计算
+4. "position: relative"，相对定位，需要将自身再向左移动自身的宽度，进入容器的"padding-left"区域
+5. "left: -100px"，自身的宽度，刚好进入容器的"padding-left"区域
+到这里圣杯布局中最核心的步骤和思想就完了。之后继续给类名为"right"的盒子添加"float: left"、"width: 100px"、"margin-left: -100px"、"position: relative"和"left 100px"属性，该右盒子的思想和左盒子一样，即，将右盒子向上拉一行并且再向右移动自身宽度进入"padding-right"区。最后再给类名为"center"的盒子添加"float: left"和"width: 100%"即可。此时中间内容区的宽度是自适应的，并且因为有内边距属性所以内容不会被两边的浮动盒子遮挡住。
+圣杯布局需要注意的是，当中间内容区域的宽度小于左、右盒子的宽度时，整个布局就会混乱，所以为了避免这种情况，再给容器盒子添加"min-width: 100px"属性，保证圣杯布局正确、有效。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <section class="container">
+      <article class="center"><br /><br /><br /></article>
+      <article class="left"><br /><br /><br /></article>
+      <article class="right"><br /><br /><br /></article>
+    </section>
+    <style type="text/css">
+      * {
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                overflow: hidden;
+                padding: 0px 100px;
+                border: 1px solid black;
+                min-width: 100px;
+            }
+            .left {
+                float: left;
+                position: relative;
+                left: -100px;
+                margin-left: -100%;
+                width: 100px;
+                background-color: greenyellow;
+            }
+            .center {
+                float: left;
+                width: 100%;
+                background-color: darkorange;
+            }
+            .right {
+                float: left;
+                position: relative;
+                left: 100px;
+                margin-left: -100px;
+                width: 100px;
+                background-color: darkgreen;
+            }
+    </style>
+  </body>
+</html>
