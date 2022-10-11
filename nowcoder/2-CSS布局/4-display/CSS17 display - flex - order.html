@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+使用Flexbox的order属性，可以完全摆脱项目在源码中顺序的约束。默认情况下，每个项目的order值都为0，意味着按照他们在源代码中的顺序进行排列。可以观看右边的代码效果，从设计上说，把图片放在最前面可以抓住读者的眼球，是比较好的设计方式，但是对于浏览器而言，拿到标题并且直接将标题呈现给读者的代价一定比获取一张照片并渲染出来小得多。所以可以考虑折中的方式，先渲染标题但是优先显示图片。
+现在给"img"图片标签设置"order: -1"属性，此时观察效果会发现图片的排列在标题之上，其他内容的相对位置不会变，它们的order值仍然是0。order的值不一定要连续，并且正负都可以。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <section>
+      <h2>countdown</h2>
+      <img
+        src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1912%2F1135-191202143454.jpg&refer=http%3A%2F%2Fuploads.xuexila.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639984107&t=eca951193e736a17eb96278117bcfb1f"
+        width="100%"
+      />
+      <article>The countdown to Christmas starts here.</article>
+      <p><a href="#">more</a></p>
+    </section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      section {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      img {
+        order: -1;
+      }
+    </style>
+  </body>
+</html>
