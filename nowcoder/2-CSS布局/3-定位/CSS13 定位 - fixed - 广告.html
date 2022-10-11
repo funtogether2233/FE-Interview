@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+固定定位不仅可以用于导航栏目，还可以用于控制中心、广告、重要提示内容等。本节使用固定定位实现一个广告牌功能，关闭按钮和该按钮的功能已给出，当点击按钮时，广告牌会消失。现在给类名为"advert"的盒子设置固定定位属性"position: fixed"、设置"right: 0"、设置"bottom: 0"，此时广告牌的位置被固定在了视口的右下方。现在还需要将关闭按钮定位在广告牌的右上方，继续给类名为"x"的按钮盒子设置绝对定位属性"position: absolute"、设置"right: 0"，观察按钮的位置，已经被定位在了广告牌的右上方。一个简易的广告牌就设计完成了。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <nav><br /></nav>
+    <section class="advert">
+      广告文案
+      <button class="x">x</button>
+    </section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .advert {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 300px;
+        height: 200px;
+        background-color: black;
+      }
+      .advert:first-line {
+        color: white;
+      }
+      .x {
+        position: absolute;
+        right: 0;
+      }
+    </style>
+    <script>
+      document.querySelector("button").onclick = function () {
+        this.parentNode.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
