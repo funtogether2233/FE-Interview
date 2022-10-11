@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+常规块盒子有一种机制叫外边距折叠，即垂直方向上的两个外边距相遇时，会折叠成一个外边距，且折叠之后的外边距高度为两者之中较大的那一个。现在给类名为"top"、"bottom"两个盒子都设置宽度、高度且都为"100px"、都设置外边距且都为"10px"，可以添加任意颜色便于区分两个盒子。此时通过调试工具可以发现两个盒子之间的距离为"10px"，并不是"20px"，说明已经发生了外边距折叠。
+外边距折叠好像很奇怪，实际上却很有用。当一个页面包含了多个段落，如果没有外边距折叠，从第二个段落开始，所有段落的间距都是最上方段落的上外边距的两倍，有了外边距折叠，段落间距才会相等。
+如果想要清除两个盒子之间的外边距折叠，可以给目标盒子设置以下属性：
+1. display: inline-block
+2. float属性值不是"none"的元素
+3. 绝对定位
+现在给类名为"bottom"的盒子设置"position"属性为"absolute"，可以看到下方的盒子向下移动了，此时外边距折叠失效。完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <section class="top"></section>
+    <section class="bottom"></section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .top,
+      .bottom {
+        margin: 10px;
+        height: 100px;
+        width: 100px;
+      }
+      .bottom {
+        position: absolute;
+      }
+    </style>
+  </body>
+</html>
