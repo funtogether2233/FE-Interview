@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+双飞翼布局是在圣杯布局上做了优化，解决了圣杯布局中布局发生错乱的问题。核心思路是在圣杯布局的基础上，再在内容区添加一层新的盒子，该盒子通过外边距将内容与两边的浮动元素分隔开，实际上中心盒子是没有"padding"属性的。
+首先给类名为"container"的盒子添加"overflow: hidden"属性，解决子浮动元素导致的高度塌陷问题。然后继续给类名为"left"的盒子添加"float: left"、"margin-left: -100%"和"width: 100px"。再给类名为"center"的盒子添加"float: left"和"width: 100%"属性，该盒子并没有像圣杯布局时添加"padding"属性那样。继续给类名为"right"的盒子添加"float: left"、"width: 100px"和"margin-left: -100px"。最后给类名为"main"的盒子添加"margin: 0px 100px"，该属性为双飞翼布局的核心点，使用外边距将内容封锁在两边浮动元素的中间。
+完成以上所讲的步骤即可通过测试。感谢您，再见。
+    </pre>
+    <section class="container">
+      <article class="center">
+        <main class="main"><br /><br /><br /></main>
+      </article>
+      <article class="left"><br /><br /><br /></article>
+      <article class="right"><br /><br /><br /></article>
+    </section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        overflow: hidden;
+        border: 1px solid black;
+      }
+      .left {
+        float: left;
+        margin-left: -100%;
+        width: 100px;
+        background-color: greenyellow;
+      }
+      .center {
+        float: left;
+        width: 100%;
+      }
+      .main {
+        margin: 0px 100px;
+        background-color: darkorange;
+      }
+      .right {
+        float: left;
+        margin-left: -100px;
+        width: 100px;
+        background-color: darkgreen;
+      }
+    </style>
+  </body>
+</html>
