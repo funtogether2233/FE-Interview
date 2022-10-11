@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+Flexbox，也就是Flexible Box Layout模块，是CSS提供的用于布局的一套新属性。这套属性包含针对容器、容器直接子元素（弹性项）的两类属性。Flexbox可以控制弹性项的这几个方面：
+1. 大小，基于内容以及可用空间
+2. 流动方向，水平还是垂直，正向还是反向
+3. 两个轴向上的对齐与分布
+4. 顺序，与源代码中的顺序无关
+现在给"ul"标签添加"display: flex"属性，让该列表成为flex容器，注意：除非另有声明，否则该属性默认弹性项排列方向为正横向，即"flex-direction: row"。现在可以看到，列表内容已经是水平排列，并且根据各自的内容宽度进行了收缩。现在对主轴（即"flex-direction"属性声明的轴向）进行排列，该属性为"justify-content"且默认值为"flex-start"，现在给"ul"标签设置"justify-content: center"属性，可以发现弹性项在主轴上已经居中了。但是此时会发现由于"home"的字体比其他字体大，所以弹性项在辅轴（与主轴对应的另一方向的轴）上并没有对其，这是由于控制辅轴对齐方式的"align-items"属性默认为"stretch"即拉伸，会占满"ul"的所有高度空间，并且该行的基线是默认的。现在再给"ul"标签添加"align-items: center"属性，会发现"li"标签此时没有撑满"ul"标签的高度，并且在辅轴上是居中对齐的，如果给该属性设置"baseline"值，仅仅会在辅轴上将内容文字对齐。
+以上所提到的容器属性都有多个属性值，可查阅官网。完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <nav>
+      <ul>
+        <li>home</li>
+        <li>spaceships</li>
+        <li>planets</li>
+        <li>stars</li>
+      </ul>
+    </nav>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2rem;
+        list-style: none;
+      }
+      nav ul li {
+        border: 1px solid black;
+      }
+      nav ul li:first-child {
+        font-size: 1.2rem;
+      }
+    </style>
+    <script>
+      document.querySelector("button").onclick = function () {
+        this.parentNode.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
