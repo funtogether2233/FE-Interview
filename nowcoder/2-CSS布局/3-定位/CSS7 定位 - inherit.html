@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+当一个元素的定位属性设置为"inherit"时，表示从父元素继承定位属性。现在虽然类名为"inner"的里盒子设置了"left: 10px"属性，但是这是无效的，因为该盒子的定位属性值为"static"。现在给里盒子添加"position: inherit"属性，表示从类名为"outer"的父级外盒子继承定位属性，现在发现里盒子的"left: 10px"属性依然没有生效，因为外盒子的定位值依然是"static"。最后再给外盒子添加"position: relative"属性，此时会发现里盒子向右移动了10px，定位属性"left"生效了。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <section class="outer">
+      <section class="inner"></section>
+    </section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .outer {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: black;
+      }
+      .inner {
+        position: inherit;
+        left: 10px;
+        width: 80px;
+        height: 80px;
+        background-color: red;
+      }
+    </style>
+  </body>
+</html>
