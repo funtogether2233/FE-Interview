@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+通过之前的学习，现在来实现一组标签，表示星球的种类。当前的"li"标签都是行内盒子，虽然看似实现了标签效果，但是每一行的宽度却没有保持一致，当进行缩放时，布局会特别的混乱。现在使用Flex布局将当前的布局方式进行优化，首先删除"li"标签的"display: inline-block"属性，给"ul"添加"display: flex"使该元素称为弹性容器。再给容器添加"flex-wrap: wrap"属性表示换行，否则所有标签会在第一行排列。此时标签已经分行排列了，但，每一行的宽度看起来依然是不同的，这时候需要通过给弹性项添加属性，通过之前讲过的"flex"属性入手。继续给所有的"li"标签添加"flex: 1 0 auto"属性，auto代表在计算剩余空间时需要减去每个标签自身的宽度而不是之前讲的0%那样忽略了自身的宽度。此时标签功能基本上是完成了，但是注意，最后一行可能因为页面的缩放导致只有一个标签却占满了一整行。那么继续给所有的"li"标签设置"max-width: 10rem"即可，此时最后一行标签虽然少但是看起来依旧很和谐。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <nav>
+      <ul>
+        <li><a href="">Fillithar</a></li>
+        <li><a href="">Berzite</a></li>
+        <li><a href="">Galidraan</a></li>
+        <li><a href="">Gravlex Med</a></li>
+        <li><a href="">Cato Neimoidia</a></li>
+        <li><a href="">Coruscant</a></li>
+        <li><a href="">Dantooine</a></li>
+        <li><a href="">Dhandu</a></li>
+        <li><a href="">Iktotchon</a></li>
+        <li><a href="">Hosnian Prime</a></li>
+        <li><a href="">Harkrova I</a></li>
+        <li><a href="">Livno III</a></li>
+        <li><a href="">Karfeddion</a></li>
+        <li><a href="">Eriadu</a></li>
+        <li><a href="">Jestefad</a></li>
+        <li><a href="">Iridonia</a></li>
+        <li><a href="">Malachor</a></li>
+        <li><a href="">Gan Moradir</a></li>
+        <li><a href="">Kethmandi</a></li>
+        <li><a href="">Mirrin Prime</a></li>
+        <li><a href="">Ezaraa</a></li>
+        <li><a href="">Muunilinst</a></li>
+        <li><a href="">Itapi Prime</a></li>
+        <li><a href="">Nam Chorios</a></li>
+      </ul>
+    </nav>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        box-sizing: border-box;
+      }
+      nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.5rem;
+        list-style: none;
+      }
+      nav ul li {
+        flex: 1 0 auto;
+        max-width: 10rem;
+        margin: 0.2rem;
+      }
+      nav ul li a {
+        position: relative;
+        display: block;
+        padding: 0.2rem 0.6rem;
+        color: white;
+        line-height: 1rem;
+        background-color: black;
+        border-radius: 0.2rem;
+        text-decoration: none;
+        text-align: center;
+      }
+      nav ul li a:before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        border: 0.7rem solid transparent;
+        border-right-width: 0.7rem;
+        border-right-color: black;
+        left: -1.2rem;
+        top: 0;
+      }
+    </style>
+  </body>
+</html>
