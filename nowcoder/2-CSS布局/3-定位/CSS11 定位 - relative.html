@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+相对定位的元素仍然会待在原来的地方，即不会从流中出来。此后可以通过"top"、"right"、"bottom"和"left"属性使元素相对于初始位置进行移动。现在给类名为"center"的盒子设置相对定位属性"position: relative"、设置"left: 50px"、设置"top: 50px"，再自定义背景颜色以便于观察。此时可以观察到中间盒子在原始的位置上向右、向下均移动了50px的距离，并且保留了原来的空间。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <div class="left"></div>
+    <div class="center"></div>
+    <div class="right"></div>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .left {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .center {
+        position: relative;
+        left: 50px;
+        top: 50px;
+        width: 100px;
+        height: 100px;
+        background-color: green;
+      }
+      .right {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+    </style>
+  </body>
+</html>
