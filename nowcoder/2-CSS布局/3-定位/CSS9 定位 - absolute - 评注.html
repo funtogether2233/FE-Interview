@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+绝对定位非常适合创建弹出层、提示和对话框等覆盖于其他内容之上的组件。比如有一篇文章，可以给文章添加一些行内的评注，最好以气泡图的样式显示在文章外部的空白区域中。
+绝对定位的元素默认会待在自己还在流中时的地方，现在给"aside"盒子设置绝对定位属性"position: absolute"，此时"aside"盒子从流中出来并且覆盖住了下方的元素，现在可以将它向左移动一些，把它定位到文章内容的左边。"article"盒子的左外边距为10rem，想让"aside"评注放在左边空白处的中间，需要进行计算，这里省略计算步骤。现在只需要将评注组件向左移动9rem即可。现在给评注组件设置"margin-left: -9rem"，在CSS中，负边距是完全有效的，负左外边距可以将元素往左拉，其他有趣的效果这里不做赘述。此时观察效果，评注在"相煎何太急？"内容的左边，可以很醒目的告诉读者该句的意思。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <section>
+      <article>
+        <p>煮豆燃豆萁，</p>
+        <p>豆在釜中泣。</p>
+        <p>本是同根生，</p>
+        <aside>豆秸怎能这样急迫地煎熬豆子呢？</aside>
+        <p class="note">相煎何太急？</p>
+      </article>
+    </section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      article {
+        margin-left: 10rem;
+      }
+      aside {
+        position: absolute;
+        width: 5rem;
+        margin-left: -9rem;
+        padding: 1rem;
+        color: white;
+        background-color: pink;
+        border-radius: 0.5rem;
+      }
+      aside:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border: 0.5rem solid pink;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        right: -1rem;
+        top: 0.5rem;
+      }
+      .note {
+        color: green;
+        text-decoration-line: underline;
+      }
+    </style>
+  </body>
+</html>
