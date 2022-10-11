@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+网格布局允许指定区域，一个区域由单个或多个单元格组成。根据上一节学习的内容，请将"section"设置为网格布局容器，并且生成一个3x3的网格，该网格容器项的宽度、高度都为100px。再给容器添加"grid-template-areas: 'a b c''d e f''g h i'"属性，表示3x3的网格区域划分从左到右、从上到下依次为a、b、c、d、e、f、g、h、i。现在给第一个"article"标签设置"grid-area: e"属性，此时可以看到数字1已经被移动到了最中间的区域，即区域"e"。
+进入下一节的学习吧。
+    </pre>
+    <section>
+      <article>1</article>
+      <article>2</article>
+      <article>3</article>
+      <article>4</article>
+      <article>5</article>
+      <article>6</article>
+      <article>7</article>
+      <article>8</article>
+      <article>9</article>
+    </section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      section {
+        display: grid;
+        grid-template-rows: 100px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "a b c" "d e f" "g h i";
+        text-align: center;
+      }
+      article {
+        height: 100px;
+        border: 1px solid black;
+      }
+      article:nth-child(1) {
+        grid-area: e;
+      }
+    </style>
+  </body>
+</html>
