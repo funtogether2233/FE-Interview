@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+固定定位是由绝对定位衍生出来的，不同之处在于，固定定位元素的父级始终是视口。因此固定定位可以用来创建始终停留在窗口相同位置的元素。比如：固定侧栏、固定顶栏等。这样方便用户，不必再费事寻找栏目。
+现在给"nav"盒子设置固定定位属性"position: fixed"、设置"top: 0"、设置自定义宽度、背景颜色。此时滑动滚轮，可以发现"nav"盒子始终固定在页面的最上方。但是，数字1却被覆盖了。由于固定定位的盒子不在流中，所以遮盖住了下方的元素。此时再给"section"盒子设置上外边距为1rem，此时1数字正常出现了。固定定位需要注意下方是否有元素被遮挡。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <nav><br /></nav>
+    <section>
+      1<br />2<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </section>
+
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100px;
+        background-color: red;
+      }
+      section {
+        margin-top: 1rem;
+      }
+    </style>
+  </body>
+</html>
