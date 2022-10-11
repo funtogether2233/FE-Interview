@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+盒模型是CSS的核心概念，描述了元素如何显示，以及在一定程度上如何相互作用、相互影响。页面中的所有元素都被看作一个矩形盒子，这个盒子包含元素的内容、内边距、边框和外边距。
+内边距是内容周围的空间，当给元素填充背景时会作用到元素的内容区域和内边距区域。边框会在内边距外且紧挨着内边距。边框的外侧是外边距，外边距是围绕在盒子可见部分之外的透明区域，用于控制元素之间的距离。
+默认情况下，width和height是指盒子的内容区域的大小，如果此时给盒子添加内边距或边框，那么会导致整个盒子变大。现在给类名为"content-box"的盒子设置宽度、高度都为"80px"、内边距为"5px"、边框为"5px solid black"，此时可以打开调试工具查看该盒子的大小，会发现该盒子实际是一个长度为"100px"的正方形，并不是"80px"。
+实际上还有另外一种盒模型，它的width和height的计算方式和当前的盒子不同。完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <div class="content-box"></div>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 5px;
+        border: 5px solid black;
+        height: 80px;
+        width: 80px;
+      }
+    </style>
+  </body>
+</html>
