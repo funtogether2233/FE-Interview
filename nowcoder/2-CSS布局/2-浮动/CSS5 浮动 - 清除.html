@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+通过前面的学习了解到，浮动元素会脱离文档流，因此不会影响其他元素。但,在之前介绍浮动盒子时提到了"文档流中的元素几乎认为浮动盒子不存在"，实际上被浮动盒子覆盖的区域中的文本内容会识别到浮动盒子并且绕开浮动盒子。
+现在给类名为"media"的盒子设置"float: left"属性，让该盒子成为浮动盒子，背景色可以自定义便于观察。此时可以观察到盒子下方的文字内容跑到了盒子右侧。通过调试工具可以发现，两个"p"标签被浮动元素所覆盖，并且内部的文字识别到了浮动元素从而绕开了浮动元素。如果给"section"元素添加边框，就会发现"section"这个父级盒子的高度只有两个"p"标签那么高，并没有将浮动元素的高度计算进去，这样会让布局很困难。
+clear属性的值有"left"、"right"、"both"和"none"，用于指定盒子的那一侧不应该紧挨着浮动盒子。现在再给类名为"clear-left"的"p"标签设置"clear: left"属性，现在可以发现"universe"文本到了浮动盒子的下方并且"section"盒子的高度也发生了变化，该高度包含了浮动盒子的高度。
+完成以上所讲的步骤即可通过测试，进入下一节的学习吧。
+    </pre>
+    <section>
+      <div class="media"></div>
+      <p>hello</p>
+      <p class="clear-left">universe</p>
+    </section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .media {
+        width: 100px;
+        height: 100px;
+        float: left;
+        background-color: red;
+      }
+      section {
+        border: 1px solid black;
+      }
+      .clear-left {
+        clear: left;
+      }
+    </style>
+  </body>
+</html>
