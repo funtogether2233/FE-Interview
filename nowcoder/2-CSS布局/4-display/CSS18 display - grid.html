@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+Grid，即网格布局。它将页面划分为一个个网格，可以任意组合不同的形态，做出理想的布局效果。Grid布局与Flexbox布局的区别在于，Flexbox是根据轴线对弹性项进行排列，而Grid布局是将容器划分为行和列，产生单元格，然后再对单元格进行操作。
+采用网格布局的区域称为容器。容器内部采用网格定位的每个子元素称为容器项，也是单元格。划分网格的线称为网格线，比如，3x3的网格有4条水平网格线和4条垂直网格线。
+现在给section盒子设置"display: grid"属性，将该盒子变成一个容器。现在需要通过给该容器划分行和列来生成单元格，给容器设置"grid-template-rows: 100px"和"grid-template-columns: repeat(2, 1fr)"两条属性以生成一个Nx2的网格，且每个容器项的宽度比为1:1、第一行的高度为100px（注意：实际上行高度可以不用设置，会根据每个容器项自动撑开，但如果设置了，就要考虑清除需要多少行，当前的行值100px仅为第一行，如果需要前三行都为100px，需要设置为"grid-template-rows: 100px 100px 100px"）。repeat方法可以简化属性值的书写，为了方便表示比例关系，网格布局提供了fr关键字，该关键字和flex-grow颇为相似。实际上如果想固定大小，完全可以将单位全部设置为固定的px值。现在继续给容器添加"grid-gap: 10px"属性，该属性为"grid-row-gap"和"grid-column-gap"两个属性的简写，分别代表行间距和列间距。
+进入下一节的学习吧。
+    </pre>
+    <section>
+      <article>1</article>
+      <article>2</article>
+      <article>3</article>
+      <article>4</article>
+      <article>5</article>
+      <article>6</article>
+      <article>7</article>
+      <article>8</article>
+      <article>9</article>
+    </section>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      section {
+        display: grid;
+        grid-template-rows: 100px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        width: 500px;
+        text-align: center;
+      }
+      article {
+        height: 100px;
+        border: 1px solid black;
+      }
+    </style>
+  </body>
+</html>
