@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+请补全JavaScript代码，要求如下：
+1. 当点击"-"按钮时，商品数量减1
+2. 当点击"+"按钮时，商品数量加1
+3. 每当点击任意按钮时，购物面板中相关信息必须同步更新
+注意：
+1. 必须使用DOM0级标准事件（onclick）
+    </pre>
+    <table>
+      <thead>
+        <caption>
+          商品
+        </caption>
+      </thead>
+      <tbody>
+        <tr>
+          <td>炸鸡</td>
+          <td>28元</td>
+          <td><button id="zjtaiduola">-</button></td>
+          <td><span id="zjsl">0</span></td>
+          <td><button id="zjtaishaola">+</button></td>
+        </tr>
+        <tr>
+          <td>可乐</td>
+          <td>5元</td>
+          <td><button id="kltaiduola">-</button></td>
+          <td><span id="klsl">0</span></td>
+          <td><button id="kltaishaola">+</button></td>
+        </tr>
+        <tr>
+          <td>总价：</td>
+          <td><span id="total">0</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script type="text/javascript">
+      const zjDown = document.getElementById("zjtaiduola"),
+        zj = document.getElementById("zjsl"),
+        zjUp = document.getElementById("zjtaishaola"),
+        klDown = document.getElementById("kltaiduola"),
+        kl = document.getElementById("klsl"),
+        klUp = document.getElementById("kltaishaola"),
+        total = document.getElementById("total");
+      function changeNum(element, action, price) {
+        if (action === "+") {
+          element.innerText = +element.innerText + 1;
+          total.innerText = +total.innerText + price;
+        }
+        if (action === "-") {
+          if (+element.innerText !== 0) {
+            element.innerText = +element.innerText - 1;
+            total.innerText = +total.innerText - price;
+          }
+        }
+      }
+      zjDown.onclick = () => changeNum(zj, "-", 28);
+      zjUp.onclick = () => changeNum(zj, "+", 28);
+      klDown.onclick = () => changeNum(kl, "-", 5);
+      klUp.onclick = () => changeNum(kl, "+", 5);
+    </script>
+  </body>
+</html>
