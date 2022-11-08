@@ -12,9 +12,15 @@ var twoSum = function (nums, target) {
   //     }
   // }
   // return [];
-  let a = 5,
-    b = 3,
-    c = 1;
-  a = b > c ? b-- : c--;
-  return [a, b, c];
+
+  // 第二次写，第一次写复杂度过高，改了官方题解哈希表做法
+  const l = nums.length;
+  const hashtable = new Map();
+  for (let i = 0; i < l; ++i) {
+    if (hashtable.has(target - nums[i])) {
+      return [hashtable.get(target - nums[i]), i];
+    }
+    hashtable.set(nums[i], i);
+  }
+  return [];
 };
