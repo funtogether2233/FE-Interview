@@ -36,20 +36,34 @@
 // };
 
 // 递归2
-var reverse = function (head) {
-  if (!head || !head.next) return head;
-  // 从后往前翻
-  const pre = reverse(head.next);
-  head.next = pre.next;
-  pre.next = head;
-  return head;
-};
+// var reverse = function (head) {
+//   if (!head || !head.next) return head;
+//   // 从后往前翻
+//   const pre = reverse(head.next);
+//   head.next = pre.next;
+//   pre.next = head;
+//   return head;
+// };
 
+// var reverseList = function (head) {
+//   let cur = head;
+//   while (cur && cur.next) {
+//     cur = cur.next;
+//   }
+//   reverse(head);
+//   return cur;
+// };
+
+// 第二次写
 var reverseList = function (head) {
-  let cur = head;
-  while (cur && cur.next) {
-    cur = cur.next;
+  let cur = head,
+    pre = null,
+    next = null;
+  while (cur) {
+    next = cur.next;
+    cur.next = pre;
+    pre = cur;
+    cur = next;
   }
-  reverse(head);
-  return cur;
+  return pre;
 };
