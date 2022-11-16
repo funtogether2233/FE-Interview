@@ -12,6 +12,16 @@
  * @return {boolean}
  */
 var hasPathSum = function (root, targetSum) {
+  //   if (!root) {
+  //     return false;
+  //   }
+  //   if (!root.left && !root.right) {
+  //     return targetSum === root.val;
+  //   }
+  //   targetSum -= root.val;
+  //     return hasPathSum(root.left, targetSum) || hasPathSum(root.right, targetSum);
+
+  // 第二次写
   if (!root) {
     return false;
   }
