@@ -11,9 +11,20 @@
  * @return {boolean}
  */
 var hasCycle = function (head) {
+  //   let fast = head,
+  //     slow = head;
+  //   while (fast != null && fast.next != null) {
+  //     fast = fast.next.next;
+  //     slow = slow.next;
+  //     if (fast === slow) {
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // 第二次写
   let fast = head,
     slow = head;
-  while (fast != null && fast.next != null) {
+  while (fast !== null && fast.next !== null) {
     fast = fast.next.next;
     slow = slow.next;
     if (fast === slow) {
