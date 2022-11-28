@@ -13,9 +13,20 @@ var maxProfit = function (prices) {
   //     deltaP=maxP-minP>deltaP?maxP-minP:deltaP;
   // }
   // return deltaP;
-  let minPrice = prices[0],
-    maxProfit = 0;
-  for (let i = 0; i < prices.length; i++) {
+
+  //   let minPrice = prices[0],
+  //     maxProfit = 0;
+  //   for (let i = 0; i < prices.length; i++) {
+  //     maxProfit = Math.max(maxProfit, prices[i] - minPrice);
+  //     minPrice = Math.min(minPrice, prices[i]);
+  //   }
+  //   return maxProfit;
+
+  // 第二次写
+  let maxProfit = 0,
+    minPrice = prices[0],
+    n = prices.length;
+  for (let i = 0; i < n; ++i) {
     maxProfit = Math.max(maxProfit, prices[i] - minPrice);
     minPrice = Math.min(minPrice, prices[i]);
   }
