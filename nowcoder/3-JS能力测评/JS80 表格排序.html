@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+描述
+系统会在tbody中随机生成一份产品信息表单，如html所示。
+请完成 sort 函数，根据参数的要求对表单所有行进行重新排序。
+1、type为id、price或者sales，分别对应第1 ~ 3列
+2、order为asc或者desc，asc表示升序，desc为降序
+3、例如 sort('price', 'asc') 表示按照price列从低到高排序
+4、所有表格内容均为数字，每一列数字均不会重复
+5、不要使用第三方插件
+    </pre>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>price</th>
+          <th>sales</th>
+        </tr>
+      </thead>
+      <tbody id="jsList">
+        <tr>
+          <td>1</td>
+          <td>10.0</td>
+          <td>800</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>30.0</td>
+          <td>600</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>20.5</td>
+          <td>700</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>40.5</td>
+          <td>500</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>60.5</td>
+          <td>300</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>50.0</td>
+          <td>400</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>70.0</td>
+          <td>200</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>80.5</td>
+          <td>100</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      // 为什么append没有重复插入元素？因为children对象地址没有改变。
+      function sort(type, order) {
+        const tbody = document.getElementById("jsList");
+        const info = Array.from(tbody.children);
+        const colMap = {
+          id: 0,
+          price: 1,
+          sales: 2,
+        };
+        info.sort((a, b) => {
+          const aField = +a.children[colMap[type]].innerText;
+          const bField = +b.children[colMap[type]].innerText;
+          if (order === "asc") {
+            return aField - bField;
+          }
+          if (order === "desc") {
+            return bField - aField;
+          }
+        });
+        for (const item of info) {
+          tbody.append(item);
+        }
+      }
+      sort("price", "desc");
+    </script>
+
+    <style>
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        color: #000000;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+      }
+      thead {
+        background: #3d444c;
+        color: #ffffff;
+      }
+      td,
+      th {
+        border: 1px solid #e1e1e1;
+        padding: 0;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+      }
+    </style>
+  </body>
+</html>
