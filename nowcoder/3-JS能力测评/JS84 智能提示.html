@@ -33,7 +33,38 @@
     </div>
 
     <script>
-      function suggest(items) {}
+      function suggest(items) {
+        const oinput = document.querySelector(".js-input");
+        const osuggest = document.querySelector(".js-suggest");
+        const oul = osuggest.querySelector("ul");
+        for (let i = oul.children.length - 1; i >= 0; i--) {
+          oul.removeChild(oul.children[i]);
+        }
+        let val = oinput.value.trim();
+        if (val == "") {
+          osuggest.classList.add("hide");
+          return;
+        }
+        let str = val.split("").reduce((total, val) => {
+          if (/[\(\)\.\*\^\\\[\]\{\}\?]/.test(val)) {
+            val = "\\" + val;
+          }
+          return (total += val + ".*");
+        }, "");
+        let reg = new RegExp(str, "");
+        let resultstr = "";
+        items.forEach((item) => {
+          if (reg.test(item)) {
+            resultstr += `<li>${item}</li>`;
+          }
+        });
+        if (resultstr == "") {
+          osuggest.classList.add("hide");
+        } else {
+          osuggest.classList.remove("hide");
+          oul.innerHTML = resultstr;
+        }
+      }
     </script>
 
     <style>
