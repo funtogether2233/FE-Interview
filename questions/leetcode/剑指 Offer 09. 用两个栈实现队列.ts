@@ -30,3 +30,5 @@ class CQueue {
  * obj.appendTail(value)
  * var param_2 = obj.deleteHead()
  */
+
+export default void 0;

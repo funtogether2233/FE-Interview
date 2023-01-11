@@ -20,3 +20,5 @@ function isValid(s: string): boolean {
   }
   return !stk.length;
 }
+
+export default void 0;

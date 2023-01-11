@@ -8,3 +8,5 @@ function twoSum(nums: number[], target: number): number[] {
   }
   return [];
 }
+
+export default void 0;

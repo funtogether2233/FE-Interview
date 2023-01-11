@@ -5,3 +5,5 @@ function lastRemaining(n: number, m: number): number {
   }
   return res;
 }
+
+export default void 0;

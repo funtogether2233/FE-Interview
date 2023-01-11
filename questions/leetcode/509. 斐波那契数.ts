@@ -5,3 +5,5 @@ function fib(n: number): number {
   }
   return dp[n];
 }
+
+export default void 0;

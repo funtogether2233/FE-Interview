@@ -53,3 +53,5 @@ function preorderTraversal(root: TreeNode | null): number[] {
   }
   return res;
 }
+
+export default void 0;

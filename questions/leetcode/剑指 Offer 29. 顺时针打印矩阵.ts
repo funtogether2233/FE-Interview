@@ -28,3 +28,5 @@ function spiralOrder(matrix: number[][]): number[] {
   }
   return res;
 }
+
+export default void 0;

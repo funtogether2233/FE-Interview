@@ -46,3 +46,5 @@ function mergeTwoLists(
   }
   return res.next;
 }
+
+export default void 0;

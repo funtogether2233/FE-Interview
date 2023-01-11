@@ -18,3 +18,5 @@ function thousandSeparator(n: number): string {
   }
   return res.reverse().join("");
 }
+
+export default void 0;

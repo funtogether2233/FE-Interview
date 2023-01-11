@@ -5,3 +5,5 @@ function climbStairs(n: number): number {
   }
   return dp[n];
 }
+
+export default void 0;

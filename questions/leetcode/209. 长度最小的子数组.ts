@@ -14,3 +14,5 @@ function minSubArrayLen(target: number, nums: number[]): number {
   }
   return res === Infinity ? 0 : res;
 }
+
+export default void 0;
