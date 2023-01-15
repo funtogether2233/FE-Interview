@@ -1,0 +1,18 @@
+.container {
+  height: 300px;
+  /* your code here */
+  display: flex;
+}
+
+.left {
+  background-color: #f44336;
+  /* your code here */
+  min-width: 100px;
+  flex: 1;
+}
+
+.right {
+  background-color: #2973af;
+  /* your code here */
+  flex: 3;
+}

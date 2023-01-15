@@ -1,0 +1,11 @@
+.max-three-lines {
+  /* your code here */
+  /* 适用范围：Webkit浏览器及移动端*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* 限制块元素中文本的显示行数，这里是3行 */
+  -webkit-line-clamp: 3;
+  /* 指定子元素按垂直方向排列 */
+  -webkit-box-orient: vertical;
+}

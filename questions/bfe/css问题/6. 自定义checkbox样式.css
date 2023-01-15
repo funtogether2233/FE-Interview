@@ -1,0 +1,22 @@
+/* your code here */
+.my-checkbox {
+  position: relative;
+}
+
+.my-checkbox input {
+  position: absolute;
+  left: -99999px;
+}
+
+.my-checkbox span::before {
+  background-color: gray;
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+
+.my-checkbox input:checked + span::before {
+  background-color: green;
+}

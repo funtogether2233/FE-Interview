@@ -1,0 +1,15 @@
+/* your code here */
+.row {
+  background: #eee;
+  border-bottom: 1px solid #ccc;
+  height: 50px;
+  width: 100%;
+}
+
+.row:nth-child(even) {
+  background: #ddd;
+}
+
+.row:first-child {
+  border-top: 1px solid #ccc;
+}
