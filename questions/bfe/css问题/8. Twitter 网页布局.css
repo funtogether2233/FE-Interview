@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  background-color: #eee;
+}
+
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  max-width: 240px;
+  background-color: #ddd;
+}
+.right {
+  display: none;
+  background-color: #eee;
+}
+
+@media screen and (min-width: 420px) {
+  .container {
+    margin: 0 10px;
+  }
+
+  .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+  }
+}
+
+@media screen and (min-width: 460px) {
+  .left {
+    width: 80px;
+  }
+}
