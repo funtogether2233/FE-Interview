@@ -1,0 +1,10 @@
+.item {
+  height: 50px;
+  background-color: #7aa4f0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+  gap: 10px;
+}

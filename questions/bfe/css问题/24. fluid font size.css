@@ -1,0 +1,8 @@
+/* 200/16 = 12.5 and also 400/32 = 12.5 so that is our linear ratio to keep when scaling
+we set minimum (16px) and maximum (32px) boundary for clam, and a function to dinamically
+calculate the values in between, which is given by diving our viewport (100vw)
+to our ratio 12.5 */
+.title {
+  text-align: center;
+  font-size: clamp(16px, calc(100vw / 12.5), 32px);
+}

@@ -1,0 +1,27 @@
+/** your code here **/
+.container {
+  min-height: 100%;
+  display: grid;
+  grid-template-areas:
+    "head head head"
+    "left body right"
+    "foot foot foot";
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  grid-area: head;
+}
+.left-sidebar {
+  grid-area: left;
+}
+.body {
+  grid-area: body;
+}
+.right-sidebar {
+  grid-area: right;
+}
+.footer {
+  grid-area: foot;
+}

@@ -1,0 +1,12 @@
+.container {
+  /** your code here **/
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  background-color: #7aa4f0;
+  height: 50px;
+  margin: 5px;
+  /** your code here **/
+  flex: 1 1 100px;
+}
