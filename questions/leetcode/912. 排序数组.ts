@@ -11,10 +11,10 @@ function sortArray(nums: number[]): number[] {
     let i = left,
       j = right - 1;
     while (true) {
-      while (nums[i] < nums[right]) {
+      while (arr[i] < arr[right]) {
         ++i;
       }
-      while (nums[j] > nums[right]) {
+      while (arr[j] > arr[right]) {
         --j;
       }
       if (i >= j) {
