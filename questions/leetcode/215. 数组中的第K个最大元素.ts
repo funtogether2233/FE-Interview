@@ -2,32 +2,36 @@ function findKthLargest(nums: number[], k: number): number {
   return quickSelect(nums, 0, nums.length - 1, nums.length - k);
 
   function quickSelect(
-    arr: number[],
+    nums: number[],
     left: number,
     right: number,
-    index: number
+    target: number
   ): number {
-    let pivot = randomPartition(arr, left, right);
-    if (pivot === index) {
-      return arr[pivot];
+    let pivot = randomPartition(nums, left, right);
+    if (pivot === target) {
+      return nums[pivot];
     }
-    if (pivot < index) {
-      return quickSelect(arr, pivot + 1, right, index);
+    if (pivot < target) {
+      return quickSelect(nums, pivot + 1, right, target);
     }
-    return quickSelect(arr, left, pivot - 1, index);
+    return quickSelect(nums, left, pivot - 1, target);
   }
 
-  function randomPartition(arr: number[], left: number, right: number): number {
+  function randomPartition(
+    nums: number[],
+    left: number,
+    right: number
+  ): number {
     let pivot = Math.floor(Math.random() * (right - left) + left);
-    [arr[pivot], arr[right]] = [arr[right], arr[pivot]];
+    [nums[pivot], nums[right]] = [nums[right], nums[pivot]];
     let i = left;
     for (let j = left; j < right; ++j) {
-      if (arr[j] < arr[right]) {
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+      if (nums[j] < nums[right]) {
+        [nums[i], nums[j]] = [nums[j], nums[i]];
         ++i;
       }
     }
-    [arr[i], arr[right]] = [arr[right], nums[i]];
+    [nums[i], nums[right]] = [nums[right], nums[i]];
     return i;
   }
 }
